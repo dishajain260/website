@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="background-color: blueviolet;" style="color: brown;">IncogNex-Edit Your Post</title>
+    <link rel="icon" href="/logo.png">
+    <style>
+        h2{
+            
+            height:270px;
+            margin-top: 0;
+            font-size: 65px;
+            width:100%;
+            font-family: fantasy;
+            background-image: url("/editpageup1.jpg.jpg");
+            background-size: cover;
+            opacity: 0.44;
+            color: rgb(85, 92, 92,0.62);
+            text-shadow: 0.5px 4px aliceblue;
+        }
+        body {
+            background-image: url("/bgimagepro1.jpg");
+            background-size: cover;
+        }
+        .textedit{
+            color: white;
+            font-size: x-large;
+
+        }
+        .container {
+            position: fixed;
+            top: 45%;
+            bottom: 30%;
+            left: 35%;
+            height: 400px;
+            width: 350px;
+            align-content: center;
+            
+        }
+        .editarea {
+           background-color: #48493f5c;
+           color: wheat;
+           font-size: 20px;
+        }
+        button {
+            border: 2px solid #6c797c47;
+            background-color: grey;
+            color: wheat;
+            position: relative;
+            left: 50%;
+            height: 30px;
+            font-size: x-large;
+            box-shadow: 5px 5px 10px 2px #bbbb73bd;
+            border-radius: 25px;
+        }
+        button:hover{
+            height: 35px;
+            background-color: darkgray;
+            box-shadow: 2px 2px 2px 2px wheat;
+        }
+    </style>
+</head>
+<body>
+    <h2><br>Hey, <br>Edit your post here!!!</h2>
+    <div class="container">
+        <div class="textedit">
+            <p>post id:<%=post.id%></p>
+            <p>post username: @ <%=post.username%></p>
+            <%=post.content%>
+        </div>
+        <div class="formedit">
+            <form style="border: none;" method="post" action="/posts/<%=post.id%>?_method=PATCH">
+            <textarea class="editarea" rows="8" cols="40" name="content"> <%=post.content%></textarea>
+            <br>
+            <br>
+            <button>SUBMIT</button>
+            </textarea></form>
+        </div> 
+
+    </div>
+</body>
+</html>

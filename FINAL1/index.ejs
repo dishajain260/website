@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title style="background-color: blueviolet;" style="color: brown;">IncogNex-chat anonymously</title>
+    <link rel="icon" href="/logo.png">
+    <!-- <title>All posts</title> -->
+    <style>
+        body{
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background-image:url("/bgimage2.jpg");
+            background-size: cover;
+            color: white;
+            overflow: hidden;
+        }
+        /* h1{
+            color:rgb(98,102,85);
+            text-shadow: 2px 5px #baacac ;
+            font-size: 60px;
+
+        } */
+        .post{
+            background-color: #44646c82;
+        }
+        .user{
+            font-style:italic;
+        }
+        .main{
+            display: flex;
+            height: 100vh;
+            margin-top: 15px;
+            padding: 100px 0.5rem 0.5rem 0.5rem ;
+        }
+        .sidebar{
+            background-size: cover;
+            width: 290px;
+            position: relative;
+            top: 0;
+            bottom: 100px;
+            margin-right: 0.5rem;
+            /* border: 3px solid gray; */
+            height: 700px;
+        }
+        .main-content{
+            opacity: 0.75;
+            flex:0.5;
+            height: 700px;
+            width: 50%;
+            border-radius: 1rem;
+            overflow-x: hidden;
+            padding:0 0.5rem 0 0.5rem;
+            position: fixed;
+            left: 22%;
+            top: 0;
+        }
+        .nav-option{
+            line-height: 2.5rem;
+            opacity: 0.7;
+            padding: 20px 0.75rem;
+            font-family: cursive;
+            color: wheat;
+        }
+        .nav-option:hover{
+    
+            opacity: 1;
+
+        }
+        .nav-option i{
+            font-size:1.25rem;
+
+        }
+        .nav-option a{
+            font-size: 1rem;
+            margin-left: 1rem;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: -webkit-fill-available;
+            height: 80px;
+            padding: 10px;
+            font-family: fantasy;
+            font-size:xx-large;
+            font-weight: 900;
+            display: inline-block;
+        }
+        .nav1 {
+            position: absolute;
+            display: inline-block;
+            margin-right: 500px;
+            height: 45px;
+            padding-left: 92%;
+
+        }
+        .nav2 {
+            position:absolute;
+            display: inline-block;
+            margin-right: 200px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        button {
+            font-size: 20px;
+            border-radius: 25px;
+            color: maroon;
+            background-color: grey;
+            box-shadow: 4px 4px 4px #c8e1e782;
+            
+        }
+        button:hover {
+            color: red;
+            background-color: darkgray;
+            font-size:21px;
+        }
+        form {
+            position: relative;
+            left:85%
+        }
+        .edit {
+            position: relative;
+            top: 28px;
+            left: 60%;
+        }
+        .details {
+            position: relative;
+            top: 26px;
+        }
+        .user {
+            font-size: 25px;
+        }
+        .content{
+            font-size: 18px;
+            margin-bottom: 0;
+        }
+
+
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"/> -->
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav1">
+            <img style="height: 90px;" src="/logo.png" alt="logo">
+        </div>
+        <div class="nav2">
+            <img style="height: 100px;" src="/title.png" alt="title">
+        </div>
+    </div>
+    <div class="main">
+        <div class="sidebar"> 
+            <div class="nav-option" style="opacity:1"; >
+                <i class="fa-solid fa-earth-americas"></i>
+                <a href="#" style="font-size: x-large;" class="sidebar-option">Explore</a>
+            </div>
+            <div class="nav-option">
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                <a href="#" style="font-size: x-large;" class="sidebar-option">Search</a>
+            </div>
+            <div class="nav-option">
+                <i class="fa-solid fa-comments"></i>
+                <a href="#" style="font-size: x-large;" class="sidebar-option">Chat</a>
+            </div>
+            <div class="nav-option">
+                <i class="fa-brands fa-instagram"></i>
+                <a href="#" style="font-size: x-large;" class="sidebar-option">Post</a>
+            </div>
+            <div class="nav-option">
+                <i class="fa-regular fa-message"></i>
+                <a href="http://localhost:8080/posts/new" style="font-size: x-large;" >Create New Post</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <!-- <h1>Quora Posts</h1> -->
+            <% posts.forEach(function(post) { %>
+            <div class="post">
+                <h3 class="user">@ <%= post.username %> </h3>
+                <h4 class="content"> <%= post.content %> </h4>
+                <br>
+                <a class="details" href ="http://localhost:8080/posts/<%=post.id%>"><button>See in detail</button></a>
+                <a class="edit" href ="http://localhost:8080/posts/<%=post.id%>/edit"> <button>Edit</button></a>
+               <form method="post" action="/posts/<%=post.id%>?_method=DELETE">  <button>delete post</button></form>
+            </div>
+            <% }); %>
+            <br/>
+            <br/>
+            <!-- <a href="http://localhost:8080/posts/new">create new post</a> -->
+        </div>
+    </div>
+</body>
+</html>

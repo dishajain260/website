@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title style="background-color: blueviolet;" style="color: brown;">IncogNex-Create New Post</title>
+    <link rel="icon" href="/logo.png">
+    <style>
+        body {
+            background-image: url("/bgimage3.jpg");
+            background-size: cover;
+        }
+        div {
+            position:fixed;
+            top:40%;
+            left:37%;
+            height:400px;
+            width:400px;
+            border: 10px solid #642323;
+            border-radius:20px;
+            align-content:center;
+            box-shadow: 5px 5px 5px 5px maroon;
+
+        }
+        form {
+            position:relative;
+            top:15%;
+        }
+        button {
+            position: relative;
+            left: 33%;
+            height: 40px;
+            width: 30%;
+            border: 5px solid #7c2121;
+            background-color: indianred;
+            border-radius: 10px;
+            box-shadow: 2px 2px 2px 2px red;
+            font-family: fantasy;
+            color: #652c2c;
+            font-size: 20px;
+            
+        }
+        input{
+            height: 30px;
+            width: 95%;
+            border: 5px solid maroon;
+            border-radius: 20px;
+            background-color: #581414;
+            color: #e7c481;
+            font-size: x-large;
+        }
+        textarea{
+            height: 130px;
+            font-size: x-large;
+            border: 5px solid maroon;
+            border-radius: 20px;
+            background-color: #581414;
+            color: #e7c481;
+            width: 95%;
+        }
+        button:hover {
+            height: 43px;
+            width:32%;
+            box-shadow: 3px 3px 3px 3px darkred;
+            background-color: red;
+        }
+        h2{
+            color: #61a2ea;
+            font-size: 60px;
+            margin: 0;
+            text-shadow: 5px 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Create Post</h2>
+        <form method="post" action="/posts">
+            <input placeholder="Enter Username:" name ="username"/> <br/> <br/>
+            <textarea placeholder="Write your post:" name ="content" ></textarea> <br/> <br/>
+            <button>submit post</button>
+        </form>
+    </div>
+</body>
+</html>
