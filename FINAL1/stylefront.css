@@ -1,0 +1,28 @@
+
+.button {
+    cursor: pointer;
+    border: 2px solid darkred;
+    border-radius: 20px;
+    width: 100px;
+    height: 50px;
+    font-size: 40px;
+    background-color: rgb(255 0 0 / 83%);
+    text-decoration: none;
+    position: relative;
+    left: 30%;
+}
+body {
+    background-image: url("./assets/frontpage.png");
+    background-size: cover;
+}
+.register-form {
+    display: inline-block;
+    position: fixed;
+    bottom: 40%;
+    left: 30%;
+    top:75%;
+}
+button:hover{
+    background-color: darkred;
+
+}
