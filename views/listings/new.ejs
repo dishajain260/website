@@ -8,11 +8,12 @@
   <body>
     <h3>Create a New Listing</h3>
     <form method="POST" action="/listings">
-      <input name="listing[title]" placeholder="enter title" type="text" />
+      <input name="listing[title]" placeholder="enter title" type="text" required />
       <br /><br />
       <textarea
         name="listing[description]"
         placeholder="enter description"
+        required
       ></textarea>
       <br /><br />
       <input
@@ -29,6 +30,7 @@
         name="listing[location]"
         placeholder="enter location"
         type="text"
+        required
       />
       <br /><br />
       <button>Add</button>
